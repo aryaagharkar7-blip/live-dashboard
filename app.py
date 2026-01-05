@@ -12,7 +12,6 @@ SUPABASE_URL = os.environ.get("SUPABASE_URL")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
 
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
-
 app = dash.Dash(__name__, 
                 external_stylesheets=[dbc.themes.CYBORG, dbc.icons.BOOTSTRAP],
                 suppress_callback_exceptions=True)
@@ -196,3 +195,4 @@ def export_csv(n):
 if __name__ == '__main__':
     # Local test command. Render will use gunicorn instead.
     app.run_server(debug=False, host='0.0.0.0', port=8050)
+
